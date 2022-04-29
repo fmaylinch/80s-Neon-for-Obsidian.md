@@ -27,24 +27,24 @@
 /* 1. Colours! Overriding both themes */
 .theme-dark,
 .theme-light {
-  --accent-1: #FF00FF;
-  --accent-2: #00FFFF;
+  --accent-1: #f42ff4;
+  --accent-2: rgba(255, 220, 255, 0.8);
   --accent-3: #00FF00;
   --accent-4: #FFFF00;
   --accent-5: #FF0000;
   --accent-6: #0000FF;
 
-  --accent-1-muted: #ff79c6;
+  --accent-1-muted: #9a899a;
   --accent-2-muted: #8be9fd;
   --accent-3-muted: #50fa7b;
   --accent-4-muted: #ffb86c;
   --accent-5-muted: #ff5555;
-  --accent-6-muted: #bd93f9;
+  --accent-6-muted: #9a899a;
 
   --background-primary: #2b213a;
-  --background-primary-alt: #171520;
-  --background-secondary: #1a1836;
-  --background-secondary-alt: #242043;
+  --background-primary-alt: #2b213a;
+  --background-secondary: #2b213a;
+  --background-secondary-alt: #2b213a;
 
   --text-accent: #FF1690;
   --text-accent-hover: #7a6ae6;
@@ -59,7 +59,7 @@
   --interactive-accent-hover: var(--accent-2-muted);
 
   --background-accent: #000;
-  --background-modifier-border: var(--accent-2);
+  --background-modifier-border: #413258;
 
   --text-highlight-bg: #ffd319;
 
@@ -112,8 +112,8 @@
 /* 3. Editor and preview */
 .cm-s-obsidian,
 .markdown-preview-view {
-  --text-normal: rgba(255, 220, 255, 0.8);
-  --text-faint: rgba(255, 220, 255, 0.25);
+  --text-normal: rgba(255, 220, 255, 0.703);
+  --text-faint: rgba(255, 220, 223, 0.422);
   --text-accent: var(--accent-2);
   color: var(--text-normal);
 }
@@ -187,7 +187,7 @@ h6 {
 .cm-s-obsidian span.cm-link:not(.cm-formatting),
 .cm-s-obsidian span.cm-url,
 a {
-  color: var(--accent-1-muted);
+  color: var(--accent-2-muted);
 }
 
 /* 3.4. Internal links */
@@ -489,3 +489,39 @@ button.mod-warning {
   100% {text-shadow: 2.6208764473832513px 0 1px rgba(0,30,255,0.5), -2.6208764473832513px 0 1px rgba(255,0,80,0.3), 0 0 3px;}
 }
 /**/
+
+/** Custom */
+
+/* reduce padding in preview */
+.markdown-source-view .markdown-embed, .markdown-source-view .file-embed {
+  border-radius: 7px;
+  padding: 4px 10px;
+}
+.markdown-embed .markdown-preview-view {
+  padding: 0 10px;
+}
+
+/* remove left line in nested lists */
+.markdown-source-view.mod-cm6 .cm-indent::before {
+  border-right: 0; 
+}
+
+/* normal inlie code font-size */
+.cm-s-obsidian span.cm-inline-code {
+  font-size: 100%;
+}
+.markdown-rendered code {
+  font-size: 100%;
+}
+
+/* show split line */
+.workspace-split.mod-left-split > .workspace-leaf-resize-handle,
+.workspace-split.mod-right-split > .workspace-leaf-resize-handle {
+  background-color: #9a899a1a;
+}
+
+/* highlight strong a bit more */
+.cm-list-1.cm-strong,
+.cm-line .cm-strong {
+  color: var(--accent-2);
+}
